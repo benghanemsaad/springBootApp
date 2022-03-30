@@ -107,6 +107,8 @@ jobs:
           #From this path
           path: target/App-0.0.1-SNAPSHOT.war
   docker:
+    needs: build
+    name: Docker image
     runs-on: ubuntu-latest
     steps:
       -
