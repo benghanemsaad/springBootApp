@@ -5,7 +5,7 @@ FROM adoptopenjdk/openjdk11:alpine-jre
 ARG JAR_FILE=./.github/workflows/path/to/artifact/App-0.0.1-SNAPSHOT.war
 
 # cd /opt/app
-WORKDIR /opt/app
+WORKDIR /home/runner/work/springBootApp/springBootApp
 
 # cp target/App-0.0.1-SNAPSHOT.war /opt/app/app.war
 COPY ${JAR_FILE} app.war
