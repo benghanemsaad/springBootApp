@@ -2,13 +2,13 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
 
 # Refer to Maven build -> finalName
-ARG JAR_FILE=../../home/runner/work/springBootApp/springBootApp/path/to/artifact/App-0.0.1-SNAPSHOT.war
+ARG JAR_FILE=App-0.0.1-SNAPSHOT.war
 
 # cd /opt/app
-#WORKDIR /home/runner/work/springBootApp/springBootApp
+WORKDIR /home/runner/work/springBootApp/springBootApp/path/to/artifact
 
 # cp target/App-0.0.1-SNAPSHOT.war /opt/app/app.war
 COPY ${JAR_FILE} app.war
 
 # java -jar /opt/app/app.jar
-#ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
