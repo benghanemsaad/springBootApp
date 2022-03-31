@@ -2,7 +2,7 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
 
 # Refer to Maven build -> finalName
-ARG JAR_FILE=App-0.0.1-SNAPSHOT.war
+ARG JAR_FILE=./App-0.0.1-SNAPSHOT.war
 
 # cd /opt/app
 WORKDIR /home/runner/work/springBootApp/springBootApp/path/to/artifact
