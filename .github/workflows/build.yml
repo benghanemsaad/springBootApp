@@ -81,7 +81,7 @@ jobs:
     steps:
       #Check-out your repository under $GITHUB_WORKSPACE, so your workflow can access it
       - uses: actions/checkout@v1
-      - run: mkdir -p path/to/artifact
+      - run: mkdir -p path/to/artifact;pwd
       #Set up JDK 11
       - name: Set up JDK
         uses: actions/setup-java@v1
