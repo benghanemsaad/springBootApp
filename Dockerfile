@@ -12,4 +12,4 @@ WORKDIR /opt/app
 COPY ${JAR_FILE} app.war
 
 # java -jar /opt/app/app.jar
-#ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
