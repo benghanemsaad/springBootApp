@@ -106,29 +106,32 @@ jobs:
           #Set artifact name
           name: artifact
           #From this path
-          path: artifact/App-0.0.1-SNAPSHOT.war
+          path: artifact
   docker:
     needs: build
     name: Docker image
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v2
-      -
-        name: Set up QEMU
+      - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
-      -
-        name: Set up Docker Buildx
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
-      -
-        name: Login to DockerHub
+      - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Build and push
+      - name: Download maven build result
+        uses: actions/download-artifact@v2
+        with:
+          name: artifact
+          path: artifact
+      - run: pwd .
+      - run: ls build
+      - name: Build and push
+        id: docker_build
         uses: docker/build-push-action@v2
         with:
           context: .
