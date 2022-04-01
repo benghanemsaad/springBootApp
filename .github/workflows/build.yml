@@ -130,3 +130,7 @@ jobs:
       - run: ls target
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - name: Upload image
+        uses: ishworkh/docker-image-artifact-upload@v1
+        with:
+          image: my-image-name:$(date +%s)
