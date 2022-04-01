@@ -106,7 +106,7 @@ jobs:
           #Set artifact name
           name: artifact
           #From this path
-          path: artifact
+          path: target/App-0.0.1-SNAPSHOT.war
   docker:
     needs: build
     name: Docker image
@@ -127,7 +127,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: artifact
-          path: artifact
+          path: target/App-0.0.1-SNAPSHOT.war
       - run: pwd .
       - run: ls build
       - name: Build and push
