@@ -3,7 +3,7 @@ FROM adoptopenjdk/openjdk11:alpine-jre
 
 RUN pwd
 # Refer to Maven build -> finalName
-ARG JAR_FILE=/home/runner/work/springBootApp/springBootApp/target/App-0.0.1-SNAPSHOT.war
+ARG JAR_FILE=~/home/runner/work/springBootApp/springBootApp/target/App-0.0.1-SNAPSHOT.war
 
 # cd /opt/app
 WORKDIR /opt/app
