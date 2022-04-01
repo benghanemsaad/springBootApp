@@ -129,7 +129,7 @@ jobs:
           name: artifact
           path: target/App-0.0.1-SNAPSHOT.war
       - run: pwd .
-      - run: ls build
+      - run: ls target
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
